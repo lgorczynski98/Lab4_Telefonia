@@ -21,4 +21,5 @@ public:
 	std::string zwroc(std::function<std::string()>fun);
 	bool login_haslo(std::string login, std::string haslo);
 	Tkonto zwroc(std::string login, std::string haslo);
+	std::vector<std::string> zwroc_wektor(std::function<std::string()>fun);
 };

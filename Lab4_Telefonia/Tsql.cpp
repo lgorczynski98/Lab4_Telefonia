@@ -151,3 +151,28 @@ Tkonto Tsql::zwroc(string login, string haslo)
 		return Tkonto();
 	}
 }
+
+vector<string> Tsql::zwroc_wektor(function<string()>fun)
+{
+	rzad row;
+	rezultat res;
+	vector<string>zwrot;
+	int qstate = 0;
+	string query = fun();
+	const char *q = query.c_str();
+	qstate = mysql_query(connection, q);
+	if (!qstate)
+	{
+		res = mysql_store_result(connection);
+		while (row = mysql_fetch_row(res))
+		{
+			zwrot.push_back(row[0]);
+		}
+		return zwrot;
+	}
+	else
+	{
+		cout << "Blad funkcji zwroc" << endl;
+		return zwrot;
+	}
+}

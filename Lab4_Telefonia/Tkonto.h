@@ -26,4 +26,5 @@ public:
 	Tkonto(std::string login, std::string haslo, std::string nr_tel, std::string imie, std::string nazwisko, Eplec plec, Edostep dostep);
 	std::vector<std::string> do_wyswietlenia();
 	int get_dostep();
+	std::string getNr_tel();
 };

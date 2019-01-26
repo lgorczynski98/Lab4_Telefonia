@@ -41,3 +41,8 @@ int Tkonto::get_dostep()
 {
 	return this->dostep;
 }
+
+string Tkonto::getNr_tel()
+{
+	return this->nr_tel;
+}

@@ -1,2 +1,5 @@
-﻿  Źródło.cpp
+﻿  Ttelefonia.cpp
+c:\users\lgorczynski98\onedrive - wojskowa akademia techniczna\materialy_ftp\semestr 3\programowanie_obiektowe\lab4_telefonia\lab4_telefonia\ttelefonia.cpp(81): warning C4267: "inicjowanie": konwersja z "size_t" do "int", możliwa utrata danych
+c:\users\lgorczynski98\onedrive - wojskowa akademia techniczna\materialy_ftp\semestr 3\programowanie_obiektowe\lab4_telefonia\lab4_telefonia\ttelefonia.cpp(91): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
+c:\users\lgorczynski98\onedrive - wojskowa akademia techniczna\materialy_ftp\semestr 3\programowanie_obiektowe\lab4_telefonia\lab4_telefonia\ttelefonia.cpp(92): warning C4244: "inicjowanie": konwersja z "double" do "float", możliwa utrata danych
   Lab4_Telefonia.vcxproj -> C:\Users\lgorczynski98\OneDrive - Wojskowa Akademia Techniczna\Materialy_FTP\Semestr 3\Programowanie_Obiektowe\Lab4_Telefonia\x64\Debug\Lab4_Telefonia.exe
