@@ -174,7 +174,7 @@ void menu_admin(Tkonto &uzytkownik)
 				string dzwoniacy, odbierajacy, data_rozpoczecia, data_zakonczenia;
 				cout << "Numer z ktorego dzwoniono: ";
 				cin >> dzwoniacy;
-				cout << "Numer na ktory dzowniono: ";
+				cout << "Numer na ktory dzwoniono: ";
 				cin >> odbierajacy;
 				cin.ignore();
 				if (nr_good(dzwoniacy) && nr_good(odbierajacy))
