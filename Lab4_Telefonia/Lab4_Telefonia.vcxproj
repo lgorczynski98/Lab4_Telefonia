@@ -123,11 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Tkonto.cpp" />
     <ClCompile Include="Tsql.cpp" />
     <ClCompile Include="Ttelefonia.cpp" />
     <ClCompile Include="Źródło.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Tkonto.h" />
     <ClInclude Include="Tsql.h" />
     <ClInclude Include="Ttelefonia.h" />
   </ItemGroup>
