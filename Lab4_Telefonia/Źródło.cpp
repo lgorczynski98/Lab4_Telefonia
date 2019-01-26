@@ -5,7 +5,7 @@
 
 #include "Ttelefonia.h"
 #include "Tsql.h"
-
+//prosze pushnij sie
 using namespace std;
 
 bool nr_good(std::string nr)
