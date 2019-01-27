@@ -135,3 +135,15 @@ void Ttelefonia::usun_polaczenie(int id)
 	stringstream ss;
 	sql.modyfikuj([&ss, id]() {ss << "DELETE FROM historia_polaczen WHERE id_polaczenia = " << id; return ss.str(); }, "Usuwanie polaczenia z historii");
 }
+
+void Ttelefonia::zmien_dane_logowania(string login, string haslo, string numer)
+{
+	stringstream ss;
+	sql.modyfikuj([&ss, login, haslo, numer]() {ss << "UPDATE uzytkownicy SET login = '" << login << "', haslo = '" << haslo << "' WHERE nr_tel = '" << numer << "'"; return ss.str(); }, "Zmiana danych logowania");
+}
+
+void Ttelefonia::zmien_dane_osobowe(string imie, string nazwisko, string numer)
+{
+	stringstream ss;
+	sql.modyfikuj([&ss, imie, nazwisko, numer]() {ss << "UPDATE uzytkownicy SET imie = '" << imie << "', nazwisko = '" << nazwisko << "' WHERE nr_tel = '" << numer << "'"; return ss.str(); }, "Zmiana danych osobowych");
+}

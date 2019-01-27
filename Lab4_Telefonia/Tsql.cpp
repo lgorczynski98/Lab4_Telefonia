@@ -41,7 +41,7 @@ void Tsql::wyswietl(function<string()>fun, vector<int>co_wypisac)
 			for (int i = 0; i < co_wypisac.size(); i++)
 			{
 				j = co_wypisac[i];
-				cout << row[j] << " ";
+				cout << setw(25) << row[j] << " ";
 			}
 			cout << endl;
 		}

@@ -2,10 +2,11 @@
 #include <vector>
 #include <cmath>
 #include <Windows.h>
+#include <iomanip>
 
 #include "Ttelefonia.h"
 #include "Tsql.h"
-//prosze pushnij sie
+
 using namespace std;
 
 bool nr_good(std::string nr)
@@ -71,15 +72,37 @@ void zadzwon(Tkonto uzytkownik, Ttelefonia &telefonia)
 		cout << "Wybrany numer jest niepoprawny";
 }
 
+void zmien_dane_logowania(Tkonto uzytkownik, Ttelefonia &telefonia)
+{
+	string login, haslo;
+	cout << "Podaj nowy login: ";
+	cin >> login;
+	cout << "Podaj nowe haslo: ";
+	cin >> haslo;
+	telefonia.zmien_dane_logowania(login, haslo, uzytkownik.getNr_tel());
+}
+
+void zmien_dane_osobowe(Tkonto uzytkownik, Ttelefonia &telefonia)
+{
+	string imie, nazwisko;
+	cout << "Podaj imie: ";
+	cin >> imie;
+	cout << "Podaj nazwisko: ";
+	cin >> nazwisko;
+	telefonia.zmien_dane_osobowe(imie, nazwisko, uzytkownik.getNr_tel());
+}
+
 void menu(Tkonto &uzytkownik)
 {
 	Ttelefonia telefonia;
 	while (1)
 	{
 		cout << "Menu uzytkownik" << endl;
-		cout << "1. Zadzwon" << endl;
-		cout << "2. Historia polaczen" << endl;
-		cout << "3. Wyloguj" << endl;
+		cout << "1.  Zadzwon" << endl;
+		cout << "2.  Historia polaczen" << endl;
+		cout << "3.  Zmien dane logowania" << endl;
+		cout << "4.  Zmien dane osobowe" << endl;
+		cout << "5.  Wyloguj" << endl;
 
 		int wybor = 0;
 		cin >> wybor;
@@ -92,10 +115,21 @@ void menu(Tkonto &uzytkownik)
 			}
 			case 2://historia polaczen
 			{
+				cout << setw(25) << "ID polaczenia" << " " << setw(25) << "Numer wychodzacy" << " " << setw(25) << "Numer wchodzacy" << " " << setw(25) << "Data rozpoczecia" << " " << setw(25) << "Data zakonczenia" << endl;
 				telefonia.wyswietl_historie_polaczen(uzytkownik.getNr_tel());
 				break;
 			}
-			case 3://wyloguj
+			case 3://zmien dane logowania
+			{
+				zmien_dane_logowania(uzytkownik, telefonia);
+				break;
+			}
+			case 4://zmien dane osobowe
+			{
+				zmien_dane_osobowe(uzytkownik, telefonia);
+				break;
+			}
+			case 5://wyloguj
 				return;
 		}
 		getchar();
@@ -121,7 +155,9 @@ void menu_admin(Tkonto &uzytkownik)
 		cout << "10. Skrajne czasy rozmow" << endl;
 		cout << "11. Sredni czas rozmow" << endl;
 		cout << "12. Zadzwon" << endl;
-		cout << "13. Wyloguj" << endl;
+		cout << "13. Zmien dane logowania" << endl;
+		cout << "14. Zmien dane osobowe" << endl;
+		cout << "15. Wyloguj" << endl;
 
 		int wybor = 0;
 		cin >> wybor;
@@ -222,11 +258,13 @@ void menu_admin(Tkonto &uzytkownik)
 			}
 			case 7://wyswietl uzytkownika
 			{
+				cout << setw(25) << "Login" << " " << setw(25) << "Imie" << " " << setw(25) << "Nazwisko" << " " << setw(25) << "Numer telefonu" << " " << setw(25) << "Plec (0 -> K; 1 -> M)" << " " << setw(25) << "Dostep (0 -> user; 1-> admin)" << endl;
 				telefonia.wyswietl_uzytkownikow();
 				break;
 			}
 			case 8://wyswietl historie polaczen
 			{
+				cout << setw(25) << "ID polaczenia" << " " << setw(25) << "Numer wychodzacy" << " " << setw(25) << "Numer wchodzacy" << " " << setw(25) << "Data rozpoczecia" << " " << setw(25) << "Data zakonczenia" << endl;
 				telefonia.wyswietl_historie_polaczen();
 				break;
 			}
@@ -250,7 +288,17 @@ void menu_admin(Tkonto &uzytkownik)
 				zadzwon(uzytkownik, telefonia);
 				break;
 			}
-			case 13:
+			case 13://zmien dane logowania
+			{
+				zmien_dane_logowania(uzytkownik, telefonia);
+				break;
+			}
+			case 14://zmien dane osobowe
+			{
+				zmien_dane_osobowe(uzytkownik, telefonia);
+				break;
+			}
+			case 15:
 				return;
 		}
 		getchar();

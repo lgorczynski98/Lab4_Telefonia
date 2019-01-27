@@ -24,4 +24,6 @@ public:
 	void sredni_czas_rozmow();
 	void modyfikuj_polaczenie(int id, std::string dzwoniacy, std::string odbierajacy, std::string data_rozpoczecia, std::string data_zakonczenia);
 	void usun_polaczenie(int id);
+	void zmien_dane_logowania(std::string login, std::string haslo, std::string numer);
+	void zmien_dane_osobowe(std::string imie, std::string nazwisko, std::string numer);
 };
