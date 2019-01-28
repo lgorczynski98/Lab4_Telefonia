@@ -8,7 +8,7 @@
 #include <vector>
 #include <iomanip>
 #include "Tkonto.h"
-
+//przykladowy ko entarz
 class Tsql
 {
 	MYSQL *connection;
